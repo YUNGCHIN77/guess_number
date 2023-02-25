@@ -1,20 +1,20 @@
 import random
-r = random.randint(1, 100)
+start = int(input("請輸入隨機數字範圍起始值："))
+over = int(input("請輸入隨機數字範圍結束值："))
 
-guess = int(input("從1~100中猜猜看一個數字："))
-if guess == r:
+r = random.randint(start, over)
+count = 0
+    
+while True:
+    guess = int(input(f"從{start}~{over}中猜猜看一個數字："))
+    count += 1
+    if guess == r:
         print("猜對囉!好棒棒")
-    
-while guess != r:
-    
-    if guess > r:
+        print(f"一共猜了{count}次")
+        break    
+    elif guess > r:
         print("哈哈哈比答案大")
     else:
         print("哈哈哈比答案小")
         
-    guess = int(input("猜猜看一個數字"))
-    
-    if guess == r:
-        print("猜對囉!好棒棒")
-        break
 
